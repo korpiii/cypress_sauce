@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/korpiii/cypress_sauce/issues"
   },
-  "homepage": "https://github.com/korpiii/cypress_sauce#readme"
+  "homepage": "https://github.com/korpiii/cypress_sauce#readme",
+  "devDependencies": {
+    "cypress": "^11.2.0"
+  }
 }
