@@ -126,5 +126,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-#ignores video folder contents
+#ignores the following folders contents
 cypress/videos/
+cypress/screenshots/
