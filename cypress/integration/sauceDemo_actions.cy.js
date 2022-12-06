@@ -5,14 +5,20 @@ describe('Full shopping flow', () => {
 	 //Pulls data from fixture file before testing starts
 	before(function () {
 		cy.fixture('example').then((data) => {
-			this.data = data
+			this.fakeData = data
 		})
   	})
 
-	it('Should log in', function () {
+	it('Logs in', function () {
 		cy.visit('https://www.saucedemo.com/');
- 		cy.get('#user-name').type(this.data.username);
-		cy.get('#password').type(this.data.password);
+ 		cy.get('#user-name').type(this.fakeData.username);
+		cy.get('#password').type(this.fakeData.password);
 		cy.get('#login-button').click();
   	})
+
+	it('Verifies there are items to buy', () => {
+		cy.get('.inventory_item').should('have.length.at.least', 1)
+    })
+
+
 })
