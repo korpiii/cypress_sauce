@@ -25,5 +25,9 @@ describe('Full shopping flow', () => {
 		cy.get('#add-to-cart-sauce-labs-bike-light').click()
 
     })
-
+	/*
+	it('Verifies cart items matches previous selection', () => {
+		cy.get('.shopping_cart_link').click()
+    })
+	*/
 })
