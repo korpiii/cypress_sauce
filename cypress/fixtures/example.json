@@ -1,6 +1,4 @@
 {
   "username": "standard_user",
-  "password": "secret_sauce",
-  "productName1": "Sauce Labs Backpack",
-  "productName2": "Sauce Labs Bike Light"
+  "password": "secret_sauce"
 }
