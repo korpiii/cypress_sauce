@@ -24,7 +24,11 @@ describe('Test suite for saucedemo', () => {
 		cy.get('#add-to-cart-sauce-labs-backpack').click()
 		cy.get('#add-to-cart-sauce-labs-bike-light').click()
 
+		//clicks on shopping cart
+		cy.get('.shopping_cart_link').click()
 
-
+		//Verifies if correct items were added
+		cy.get('#item_4_title_link > .inventory_item_name').should('have.text', 'Sauce Labs Backpack')
+		cy.get('#item_0_title_link > .inventory_item_name').should('have.text', 'Sauce Labs Bike Light')
   	})
 })
