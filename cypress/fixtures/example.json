@@ -1,6 +1,7 @@
 {
   "username": "standard_user",
   "password": "secret_sauce",
+  "lockedOutUsername": "locked_out_user",
   "firstName": "Jane",
   "lastName": "Doe",
   "zipCode": "12435"
