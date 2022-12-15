@@ -129,3 +129,4 @@ dist
 #ignores the following folders contents
 cypress/videos/
 cypress/screenshots/
+cypress/.DS_Store
