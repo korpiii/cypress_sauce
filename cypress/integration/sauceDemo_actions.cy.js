@@ -5,14 +5,14 @@ describe('Test suite for saucedemo', () => {
 
 
 	 //Pulls data from fixture file before testing starts
-	before(function () {
+	beforeEach(function () {
 		cy.fixture('example').then((data) => {
 			this.fakeData = data
 		})
+		cy.visit('https://www.saucedemo.com/');
   	})
 
 	it('Tests Full shopping flow', function () {
-		cy.visit('https://www.saucedemo.com/');
  		cy.get('#user-name').type(this.fakeData.username)
 		cy.get('#password').type(this.fakeData.password)
 		cy.get('#login-button').click()
@@ -45,4 +45,15 @@ describe('Test suite for saucedemo', () => {
 		cy.get('#checkout_complete_container').should('be.visible')
 	
   	})
+	it('Verifies lockout user', function () {
+ 		cy.get('#user-name').type(this.fakeData.lockedOutUsername)
+		cy.get('#password').type(this.fakeData.password)
+		cy.get('#login-button').click()
+
+		//verifies lockout status
+		cy.get('[data-test="error"]').should('have.text','Epic sadface: Sorry, this user has been locked out.')
+		
+	
+  	})
+
 })
