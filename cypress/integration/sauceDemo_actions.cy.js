@@ -2,7 +2,7 @@
 
 describe('Test suite for saucedemo', () => {
 
-	let itemName1, itemName2
+
 
 	 //Pulls data from fixture file before testing starts
 	before(function () {
@@ -20,10 +20,11 @@ describe('Test suite for saucedemo', () => {
 		//Verifies there are items to buy
 		cy.get('.inventory_item:visible').should('have.length', 6)
 
-		//adds the first two products to cart
-		cy.get('.inventory_list').find('.inventory_item').eq(1).contains('Add to cart').click()
-		cy.get('.inventory_list').find('.inventory_item').eq(2).contains('Add to cart').click()
-		
-	
+		//adds two products to cart
+		cy.get('#add-to-cart-sauce-labs-backpack').click()
+		cy.get('#add-to-cart-sauce-labs-bike-light').click()
+
+
+
   	})
 })
