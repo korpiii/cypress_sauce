@@ -30,5 +30,19 @@ describe('Test suite for saucedemo', () => {
 		//Verifies if correct items were added
 		cy.get('#item_4_title_link > .inventory_item_name').should('have.text', 'Sauce Labs Backpack')
 		cy.get('#item_0_title_link > .inventory_item_name').should('have.text', 'Sauce Labs Bike Light')
+
+		//goes to checkout
+		cy.get('#checkout').click()
+
+		//fills form and continues
+		cy.get('#first-name').type(this.fakeData.firstName)
+		cy.get('#last-name').type(this.fakeData.lastName)
+		cy.get('#postal-code').type(this.fakeData.zipCode)
+		cy.get('#continue').click()
+
+		//places order and verifies if it's successful
+		cy.get('#finish').click()
+		cy.get('#checkout_complete_container').should('be.visible')
+	
   	})
 })
